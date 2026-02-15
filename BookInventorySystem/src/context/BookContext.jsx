@@ -3,9 +3,9 @@ import axios from "axios";
 
 export const BookContext = createContext();
 
-
 export const BookProvider = ({ children }) => {
-  // CONTEXT-ONLY CRUD PART (active)
+  // CONTEXT-ONLY CRUD PART
+
   const [books, setBooks] = useState([
     {
       book_id: 1,
@@ -13,7 +13,8 @@ export const BookProvider = ({ children }) => {
       author_name: "Jordan Walke",
       publisher: "Facebook Inc.",
       publish_date: "2013-05-29",
-      book_description: "A beginner friendly guide to understanding React fundamentals including components, state, and props."
+      book_description:
+        "A beginner friendly guide to understanding React fundamentals including components, state, and props.",
     },
     {
       book_id: 2,
@@ -21,7 +22,7 @@ export const BookProvider = ({ children }) => {
       author_name: "Brendan Eich",
       publisher: "Mozilla Press",
       publish_date: "2015-08-15",
-      book_description: "Deep dive into closures, hoisting, prototypes, async programming and modern ES6+ features."
+      book_description: "Deep dive into closures, hoisting, prototypes, async programming and modern ES6+ features.",
     },
     {
       book_id: 3,
@@ -29,7 +30,7 @@ export const BookProvider = ({ children }) => {
       author_name: "Dan Abramov",
       publisher: "Open Source Publications",
       publish_date: "2017-02-10",
-      book_description: "Complete guide to managing application state using Redux and Redux Toolkit."
+      book_description: "Complete guide to managing application state using Redux and Redux Toolkit.",
     },
     {
       book_id: 4,
@@ -37,7 +38,8 @@ export const BookProvider = ({ children }) => {
       author_name: "Robert C. Martin",
       publisher: "Prentice Hall",
       publish_date: "2008-08-11",
-      book_description: "A handbook of agile software craftsmanship focused on writing clean, maintainable and scalable code."
+      book_description:
+        "A handbook of agile software craftsmanship focused on writing clean, maintainable and scalable code.",
     },
     {
       book_id: 5,
@@ -45,7 +47,8 @@ export const BookProvider = ({ children }) => {
       author_name: "Kyle Simpson",
       publisher: "O'Reilly Media",
       publish_date: "2014-12-27",
-      book_description: "In-depth explanation of JavaScript core mechanisms including scope, closures, and asynchronous behavior."
+      book_description:
+        "In-depth explanation of JavaScript core mechanisms including scope, closures, and asynchronous behavior.",
     },
   ]);
 
@@ -67,7 +70,8 @@ export const BookProvider = ({ children }) => {
 
   return <BookContext.Provider value={{ books, addBook, updateBook, deleteBook }}>{children}</BookContext.Provider>;
 
-  // API CRUD PART (commented out)
+  // API CRUD PART
+
   /*
   const [books, setBooks] = useState([]);
   const API_URL = "http://localhost:3000/books";

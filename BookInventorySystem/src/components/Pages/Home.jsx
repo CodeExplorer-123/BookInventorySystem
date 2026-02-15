@@ -21,6 +21,7 @@ const Home = () => {
   };
 
   const handleEdit = (book) => {
+    // Map BookContext fields to modal fields for editing (no ISBN, year as date)
     setBookData({
       title: book.book_name || "",
       author: book.author_name || "",
